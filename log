@@ -70,3 +70,19 @@ exercises.c:100:10: error: unused variable ‘pA’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 b092fbc
+Thu 21 Mar 2024 01:13:29 AM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:104:10: error: ‘pAux’ undeclared (first use in this function); did you mean ‘pAx’?
+  104 |     push(pAux, dato);
+      |          ^~~~
+      |          pAx
+exercises.c:104:10: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:100:10: error: unused variable ‘pAx’ [-Werror=unused-variable]
+  100 |   Stack* pAx= create_stack();
+      |          ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+3552f04
