@@ -50,3 +50,23 @@ Thu 21 Mar 2024 01:11:15 AM UTC:
  tests:  3|2
 total_score: 40/70
 62f3875
+Thu 21 Mar 2024 01:13:19 AM UTC: 
+ exercises.c | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:104:10: error: ‘pAux’ undeclared (first use in this function); did you mean ‘pA’?
+  104 |     push(pAux, dato);
+      |          ^~~~
+      |          pA
+exercises.c:104:10: note: each undeclared identifier is reported only once for each function it appears in
+exercises.c:107:21: error: ‘pAu’ undeclared (first use in this function); did you mean ‘pA’?
+  107 |   while((dato = pop(pAu)) != NULL) {
+      |                     ^~~
+      |                     pA
+exercises.c:100:10: error: unused variable ‘pA’ [-Werror=unused-variable]
+  100 |   Stack* pA= create_stack();
+      |          ^~
+cc1: all warnings being treated as errors
+Compilation failed
+b092fbc
