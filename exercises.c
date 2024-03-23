@@ -119,23 +119,25 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 
 int parentesisBalanceados(char *cadena) {
   Stack* pAux= create_stack();
-  int balanceados = 1;
-  int i = 0;
-  while (cadena[i] != '\0' && balanceados == 1) {
-    if (cadena[i] == '(') {
-      push(pAux, cadena[i]);
-    } else if (cadena[i] == ')') {
-      if (pop(pAux) == NULL) {
-        balanceados = 0;
-      }
+    int balanceados = 1;
+    int i = 0;
+    while (cadena[i] != '\0' && balanceados == 1) {
+        if (cadena[i] == '(' || cadena[i] == '{' || cadena[i] == '[') {
+            push(pAux, cadena[i]);
+        } else if (cadena[i] == ')' || cadena[i] == '}' || cadena[i] ==   ']') {
+            char top = pop(pAux);
+            if ((cadena[i] == ')' && top != '(') || (cadena[i] == '}' && top != '{') || (cadena[i] == ']' && top != '[')) {
+                balanceados = 0;
+            }
+        }
+        i++;
     }
-    i++;
-  }
+    if (pAux->top != NULL) {
+        balanceados = 0; // Hay paréntesis sin pareja
+    }
 
-  if (balanceados == 1) {
-    return 1;
-  } else {
-    return 0;
-  }
+    free(pAux); // Liberar la memoria de la pila
+
+    return balanceados;
 }
 
