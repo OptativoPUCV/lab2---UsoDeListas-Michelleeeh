@@ -133,10 +133,10 @@ int parentesisBalanceados(char *cadena) {
         i++;
     }
     if (pAux->top != NULL) {
-        balanceados = 0; // Hay paréntesis sin pareja
+        balanceados = 0;
     }
 
-    free(pAux); // Liberar la memoria de la pila
+    free(pAux);
 
     return balanceados;
 }
