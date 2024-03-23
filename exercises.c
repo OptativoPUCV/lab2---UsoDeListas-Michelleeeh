@@ -132,7 +132,7 @@ int parentesisBalanceados(char *cadena) {
     i++;
   }
 
-  if (balanceados == 1 && pAux->size == 0) {
+  if (balanceados == 1) {
     return 1;
   } else {
     return 0;
