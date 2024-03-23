@@ -121,24 +121,18 @@ int parentesisBalanceados(char *cadena) {
   Stack* pAux= create_stack();
   int balanceados = 1;
   int i = 0;
-  while(cadena[i] != '\0' && balanceados == 1) {
-    if(cadena[i] == '(') {
+while (cadena[i] != '\0' && balanceados == 1) {
+    if (cadena[i] == '(') {
       push(pAux, cadena[i]);
-      
-    } else {
-      if(cadena[i] == ')') {
-        if(pop(pAux) == NULL) {
-          balanceados = 0;
-          
-        } 
-        
+    } else if (cadena[i] == ')') {
+      if (pop(pAux) == NULL) {
+        balanceados = 0;
       }
-      
     }
     i++;
-     
   }
-if (balanceados == 1 && pAux->size == 0) {
+
+  if (balanceados == 1 && is_empty(pAux)) {
     return 1;
   } else {
     return 0;
