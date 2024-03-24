@@ -135,7 +135,7 @@ int parentesisBalanceados(char *cadena) {
         }
         i++;
     }
-    if (pAux->top != NULL) {
+    if (first(pAux) != NULL) {
         balanceados = 0;
     }
     return balanceados;
