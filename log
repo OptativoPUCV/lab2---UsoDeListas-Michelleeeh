@@ -684,3 +684,17 @@ exercises.c:137:13: error: invalid use of incomplete typedef ‘Stack’ {aka �
 cc1: all warnings being treated as errors
 Compilation failed
 cbdfa73
+Sun 24 Mar 2024 01:04:02 AM UTC: 
+ exercises.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:129:25: error: initialization of ‘char’ from ‘void *’ makes integer from pointer without a cast [-Werror=int-conversion]
+  129 |             char dato = pop(pAux);
+      |                         ^~~
+exercises.c:138:13: error: invalid use of incomplete typedef ‘Stack’ {aka ‘List’}
+  138 |     if (pAux->top != NULL) {
+      |             ^~
+cc1: all warnings being treated as errors
+Compilation failed
+e11beb5

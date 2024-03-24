@@ -123,7 +123,8 @@ int parentesisBalanceados(char *cadena) {
     int i = 0;
     while (cadena[i] != '\0' && balanceados == 1) {
         if (cadena[i] == '(' || cadena[i] == '[' || cadena[i] == '{') {
-            push(pAux, cadena[i]);
+            char *temp = &cadena[i]; 
+            push(pAux, temp);
         } else if (cadena[i] == ')' || cadena[i] == ']' || cadena[i] == '}') {
             char dato = pop(pAux);
             if ((cadena[i] == ')' && dato != '(') ||
@@ -137,7 +138,7 @@ int parentesisBalanceados(char *cadena) {
     if (pAux->top != NULL) {
         balanceados = 0;
     }
+    free(pAux); // Liberar la memoria utilizada por la pila
     return balanceados;
-  return 0;
 }
 
