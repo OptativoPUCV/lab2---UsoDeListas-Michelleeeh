@@ -501,3 +501,32 @@ exercises.c:144:1: error: control reaches end of non-void function [-Werror=retu
 cc1: all warnings being treated as errors
 Compilation failed
 6990011
+Sun 24 Mar 2024 12:50:54 AM UTC: 
+ exercises.c | 31 ++++++++++++++++++++++---------
+ 1 file changed, 22 insertions(+), 9 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:126:24: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  126 |       push(pAux, cadena[i]);
+      |                  ~~~~~~^~~
+      |                        |
+      |                        char
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘char’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+In file included from test.c:5:
+exercises.c:128:14: error: invalid use of incomplete typedef ‘Stack’ {aka ‘List’}
+  128 |       if(pAux->top == NULL) {
+      |              ^~
+exercises.c:151:10: error: invalid use of incomplete typedef ‘Stack’ {aka ‘List’}
+  151 |   if(pAux->top != NULL) {
+      |          ^~
+exercises.c: At top level:
+exercises.c:157:1: error: expected identifier or ‘(’ before ‘}’ token
+  157 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+9d753ad
