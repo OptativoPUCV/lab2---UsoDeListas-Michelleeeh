@@ -138,7 +138,5 @@ int parentesisBalanceados(char *cadena) {
     if (pAux->top != NULL) {
         balanceados = 0;
     }
-    free(pAux); // Liberar la memoria utilizada por la pila
     return balanceados;
 }
-
